@@ -11,8 +11,17 @@ namespace BuckeyeStore.Core.Tests
         {
             var listing = new Listing
             {
-                
+                Id = 1,
+                EventName = "Outreach",
+                ProducerName = "United"              
             };
+
+            //Assert
+            Assert.NotNull(listing.Id);
+            Assert.NotNull(listing.EventName);
+            Assert.NotNull(listing.ProducerName);
+            Assert.NotNull(listing.ExpireDate);
+            Assert.NotNull(listing.eventTime);
         }
     }
 }

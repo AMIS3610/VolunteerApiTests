@@ -9,10 +9,28 @@ namespace BuckeyeStore.Core.Tests
         [Fact]
         public void Test1()
         {
-            var listing = new Account
+            var account = new Account
             {
-                
+                Id = 1,
+                UserName = "HeckinSnek",
+                Password = "OhboyIjustpoopedmypants12345"
             };
+
+            var listing = new Listing
+            {
+                Id = 1,
+                EventName = "Outreach",
+                ProducerName = "United"              
+            };
+           
+            //Act
+            account.AddListing(listing);
+
+            //Assert
+            Assert.NotNull(account.Id);
+            Assert.NotNull(account.UserName);
+            Assert.NotNull(account.Password);
+
         }
     }
 }

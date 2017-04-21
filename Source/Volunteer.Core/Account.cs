@@ -10,6 +10,11 @@ namespace Volunteer.Core
         public string fName{get; set;}
         public string lName{get;set;}
 
+        public Listing Listing {get; set;}
 
+        public void AddListing(Listing listing)
+        {
+            this.Listing = listing;
+        }
     }
 }

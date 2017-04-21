@@ -4,7 +4,7 @@ using Volunteer.Api.Data;
 using Volunteer.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace BuckeyeStore.Api.Tests
+namespace Volunteer.Api.Tests
 {
     public class ContextFixture : IDisposable
     {
@@ -29,10 +29,10 @@ namespace BuckeyeStore.Api.Tests
 
             var context = new VolunteerContext(builder.Options);
 
-            var products = Enumerable.Range(1, 10)
-                .Select(i => new Listing { Id = i, Name = $"T-Shirt{i}", Brand = "Nike" });
+            var listings = Enumerable.Range(1, 10)
+                .Select(i => new Listing { Id = i, EventName = $"Outreach{i}", ProducerName = "United" });
 
-            context.Listings.AddRange(products);
+            context.Listings.AddRange(listings);
 
             int changed = context.SaveChanges();
 
